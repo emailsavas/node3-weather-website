@@ -16,7 +16,9 @@ const forecast = ( latitude, longitude, callback) => {
             //     rainProbab: body.currently.precipProbability
             callback(undefined, body.daily.data[0].summary +
                                 ' Η θερμοκρασία στην πόλη είναι '+body.currently.temperature+'C βαθμούς.'+
-                                ' με πιθανότητα βροχής '+body.currently.precipProbability*100+'%.' )
+                                ' με πιθανότητα βροχής '+body.currently.precipProbability*100+'%.'+
+                                ' Σήμερα η ελάχιστη θερμοκρασία ήταν '+body.daily.data[0].temperatureMin+'C'+
+                                ' και η μέγιστη θερμοκρασία ήταν '+body.daily.data[0].temperatureMax+'C.')
         }
 
     })
